@@ -1,0 +1,13 @@
+A transfer learning methodology has been adopted using fast.ai library.
+
+Initially, all the relevant libraries are imported.
+
+The data is structured into train and test directories. Exploratory data analysis of the images is carried out. A general overview of the entire dataset is obtained.
+
+Resnet architecture is used with a batch size of 32 for training purposes. Data augmentation is applied by putting size transforms with a zoom of 1.1. Validation data is 30% of the training dataset.
+
+Initially, the resnet is preloaded with the weights of imagenet dataset. It is run with a learning rate of 1e-3 for 20 epochs. The model is then saved.
+
+Then precompute is turned off to specify training for internal layers. Cycle len parameter is needed for cyclical learning rates. Then again after training, the model is saved.
+
+The layers are then unfrozen. Different learning rates are supplied for last layers. The final model is saved. Evaluation script is part of osho.html
